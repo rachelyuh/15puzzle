@@ -1,0 +1,12 @@
+[package]
+name = "fifteenpuzzle"
+version = "0.1.0"
+authors = ["rachelyuh <heavenyuh@gmail.com>"]
+license = "MIT"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.26.1"
+tui = { package = "ratatui", version = "0.21.0" }
+rand = "0.8" 
+colored = "2.0"
