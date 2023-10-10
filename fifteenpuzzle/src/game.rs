@@ -66,7 +66,7 @@ impl GameInfo {
         let zero_row = (empty as f64 / 4 as f64).floor() as u16;
         let zero_col = empty % 4;
         match ch {
-            'w' => {
+            's' => {
                 if zero_row > 0 {
                     let curr = (zero_row) * 4 + zero_col;
                     let swapped = (zero_row - 1) * 4 + zero_col;
@@ -75,7 +75,7 @@ impl GameInfo {
                 }
                 return false;
             }
-            'a' => {
+            'd' => {
                 if zero_col > 0 {
                     let curr = (zero_row) * 4 + zero_col;
                     let swapped = (zero_row) * 4 + zero_col - 1;
@@ -84,7 +84,7 @@ impl GameInfo {
                 }
                 return false;
             }
-            's' => {
+            'w' => {
                 if zero_row < 3 {
                     let curr = (zero_row) * 4 + zero_col;
                     let swapped = (zero_row + 1) * 4 + zero_col;
@@ -93,7 +93,7 @@ impl GameInfo {
                 }
                 return false;
             }
-            'd' => {
+            'a' => {
                 if zero_col < 3 {
                     let curr = (zero_row) * 4 + zero_col;
                     let swapped = (zero_row) * 4 + zero_col + 1;
@@ -284,10 +284,10 @@ mod tests {
     fn win_condition() {
         let mut game = GameInfo::new();
         game.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-        game.move_key('w');
-        game.handle_game_change(true, 'w');
         game.move_key('s');
         game.handle_game_change(true, 's');
+        game.move_key('w');
+        game.handle_game_change(true, 'w');
         assert_eq!(game.check_win(game.numbers), true);
         assert_eq!(game.game_state, GameState::FINISHED);
     }

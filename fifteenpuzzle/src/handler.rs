@@ -14,23 +14,23 @@ pub fn handle_key_events(key_event: KeyEvent, game: &mut GameInfo) -> GameResult
                 game.exit();
             }
         }
-        // Up on q
+        // Down on q
         KeyCode::Char('w') => {
             let moved = game.move_key('w');
             game.handle_game_change(moved, 'w')
         }
 
-        // Left of a
+        // Right of a
         KeyCode::Char('a') => {
             let moved = game.move_key('a');
             game.handle_game_change(moved, 'a')
         }
-        //Down on s
+        //Up on s
         KeyCode::Char('s') => {
             let moved = game.move_key('s');
             game.handle_game_change(moved, 's')
         }
-        //Right on d
+        //Left on d
         KeyCode::Char('d') => {
             let moved = game.move_key('d');
             game.handle_game_change(moved, 'd')

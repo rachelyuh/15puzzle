@@ -27,7 +27,7 @@ pub fn render<B: Backend>(game: &mut GameInfo, frame: &mut Frame<'_, B>) {
             "\n\
             hello! \n\
             \n\
-                press 'w', 'a', 's', 'd' to move the zero around \n\
+                press 'w', 'a', 's', 'd' to move around \n\
                 press `esc`, `ctrl-c` or `q` to quit :( \n\
                 \n\
                 Moves: {} \n\
